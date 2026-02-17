@@ -1,13 +1,13 @@
 {% set name = "sqlalchemy-searchable" %}
-{% set version = "2.1.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sqlalchemy_searchable-{{ version }}.tar.gz
-  sha256: 89d120ed1a752d22e32b3f028f62cae571241ccce081df8d8a42e1fa9a53da93
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlalchemy_searchable-{{ version }}.tar.gz
+  sha256: 6bed911f2cb6c9b90383a082446c7245d4b9df0dbb9f8b25c2325f717b85505b
 
 build:
   noarch: python
