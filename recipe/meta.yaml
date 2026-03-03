@@ -1,5 +1,5 @@
 {% set name = "sqlalchemy-searchable" %}
-{% set version = "2.2.0" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlalchemy_searchable-{{ version }}.tar.gz
-  sha256: d4869f9c295c6f17a2c4491976ceeb2b4a0b56f89b18c3881753d768eb467906
+  sha256: 6bed911f2cb6c9b90383a082446c7245d4b9df0dbb9f8b25c2325f717b85505b
 
 build:
   noarch: python
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - sqlalchemy-utils >=0.40.0
-    - sqlalchemy >=1.4
+    - sqlalchemy >=2.0
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Provides fulltext search capabilities for declarative SQLAlchemy models.
